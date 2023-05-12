@@ -16,5 +16,6 @@
     <string name="or">or</string>
     <string name="go_to_login">Already have an account? Login</string>
 
+    <string name="forgot_password">Forgot your password</string>
 
 </resources>

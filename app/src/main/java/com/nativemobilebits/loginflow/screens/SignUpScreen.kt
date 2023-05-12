@@ -65,11 +65,10 @@ fun SignUpScreen() {
 
             DividerTextComponent()
 
-            ClickableLoginTextComponent(onTextSelected = {
-
+            ClickableLoginTextComponent(tryingToLogin = true, onTextSelected = {
+                PostOfficeAppRouter.navigateTo(Screen.LoginScreen)
             })
         }
-
 
     }
 
