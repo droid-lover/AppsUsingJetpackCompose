@@ -1,20 +1,11 @@
 # LoginFeatureTemplateUsingJetpackCompose
 
 
-Welcome to the official GitHub repository for Native Mobile Bits! Jetpack compose series. </br></br>
-Here, you'll find a comprehensive collection of tutorials and resources to help you get started with Jetpack Compose, Google's modern toolkit for building native Android user interfaces. 
+This is a complete functional template for login and registration flow for any #Android #App using #JetpackCompose.
 
-Each tutorial in this repository corresponds to a video on <a href ="https://www.youtube.com/@NativeMobileBits">our YouTube channel</a>,
-where we walk you through the process of building a real-world application from start to finish.
-</br></br>
-From creating your first Composable function to incorporating advanced features like animations and state management, our tutorials cover everything you need to know to become proficient in Jetpack Compose.
-</br></br>
-Our code samples are designed to be easy to follow and fully customizable, allowing you to experiment and adapt them to your own projects. Plus, we've included helpful comments and documentation throughout our codebase to help you better understand how each component works.
-</br></br>
-Whether you're new to Jetpack Compose or a seasoned pro, our tutorials are designed to help you take your skills to the next level. So, why wait? Checkout <a href ="https://www.youtube.com/@NativeMobileBits">our YouTube channel</a> & Clone our repository today and start exploring the wonderful world of Jetpack Compose!
+In this video, we will explore how to implement a login screen using Jetpack Compose, with a particular focus on optimizing keyboard options and actions.
 
-![Alt Text](https://github.com/droid-lover/LoginFeatureTemplateUsingJetpackCompose/blob/master/images/thumbnail.png) 
-
+Checkout now at our YouTube channel "Native Mobile Bits"
 
 
  If you love this repo, Drop a Star, Lets connect over here :) 
