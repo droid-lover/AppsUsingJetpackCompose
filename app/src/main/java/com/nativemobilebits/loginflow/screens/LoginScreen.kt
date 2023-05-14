@@ -36,10 +36,14 @@ fun LoginScreen() {
             Spacer(modifier = Modifier.height(20.dp))
 
             MyTextFieldComponent(labelValue = stringResource(id = R.string.email),
-            painterResource(id = R.drawable.message))
+                painterResource(id = R.drawable.message),
+            onTextSelected = {})
 
-            PasswordTextFieldComponent(labelValue = stringResource(id = R.string.password),
-                painterResource(id = R.drawable.lock))
+            PasswordTextFieldComponent(
+                labelValue = stringResource(id = R.string.password),
+                painterResource(id = R.drawable.lock),
+                onTextSelected = {}
+            )
 
             Spacer(modifier = Modifier.height(40.dp))
             UnderLinedTextComponent(value = stringResource(id = R.string.forgot_password))
