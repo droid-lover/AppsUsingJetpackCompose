@@ -50,7 +50,8 @@ fun LoginScreen() {
 
             Spacer(modifier = Modifier.height(40.dp))
 
-            ButtonComponent(value = stringResource(id = R.string.login))
+            ButtonComponent(value = stringResource(id = R.string.login),
+            onButtonClicked = {})
 
             Spacer(modifier = Modifier.height(20.dp))
 
