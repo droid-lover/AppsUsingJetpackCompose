@@ -37,7 +37,8 @@ fun LoginScreen() {
 
             MyTextFieldComponent(labelValue = stringResource(id = R.string.email),
                 painterResource(id = R.drawable.message),
-            onTextSelected = {})
+            onTextChanged = {}
+            )
 
             PasswordTextFieldComponent(
                 labelValue = stringResource(id = R.string.password),

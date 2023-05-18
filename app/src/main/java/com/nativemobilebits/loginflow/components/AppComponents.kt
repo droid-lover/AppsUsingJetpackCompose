@@ -17,8 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.FocusDirection
-import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
@@ -76,7 +74,8 @@ fun HeadingTextComponent(value: String) {
 
 @Composable
 fun MyTextFieldComponent(labelValue: String, painterResource: Painter,
-                         onTextSelected: (String) -> Unit
+                         onTextChanged: (String) -> Unit,
+                         errorStatus:Boolean = false
 ) {
 
     val textValue = remember {
@@ -101,18 +100,20 @@ fun MyTextFieldComponent(labelValue: String, painterResource: Painter,
         value = textValue.value,
         onValueChange = {
             textValue.value = it
-            onTextSelected(it)
+            onTextChanged(it)
         },
         leadingIcon = {
             Icon(painter = painterResource, contentDescription = "")
-        }
+        },
+        isError = !errorStatus
     )
 }
 
 
 @Composable
 fun PasswordTextFieldComponent(labelValue: String, painterResource: Painter,
-                               onTextSelected: (String) -> Unit) {
+                               onTextSelected: (String) -> Unit,
+                               errorStatus:Boolean = false) {
 
     val localFocusManager = LocalFocusManager.current
     val password = remember {
@@ -167,7 +168,8 @@ fun PasswordTextFieldComponent(labelValue: String, painterResource: Painter,
             }
 
         },
-        visualTransformation = if (passwordVisible.value) VisualTransformation.None else PasswordVisualTransformation()
+        visualTransformation = if (passwordVisible.value) VisualTransformation.None else PasswordVisualTransformation(),
+        isError = !errorStatus
     )
 }
 

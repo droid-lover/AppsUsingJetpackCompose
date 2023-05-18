@@ -1,7 +1,6 @@
 package com.nativemobilebits.loginflow.screens
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -18,7 +17,6 @@ import com.nativemobilebits.loginflow.data.LoginViewModel
 import com.nativemobilebits.loginflow.data.UIEvent
 import com.nativemobilebits.loginflow.navigation.PostOfficeAppRouter
 import com.nativemobilebits.loginflow.navigation.Screen
-import com.nativemobilebits.loginflow.navigation.SystemBackButtonHandler
 
 @Composable
 fun SignUpScreen(loginViewModel: LoginViewModel = viewModel()) {
@@ -38,25 +36,28 @@ fun SignUpScreen(loginViewModel: LoginViewModel = viewModel()) {
             MyTextFieldComponent(
                 labelValue = stringResource(id = R.string.first_name),
                 painterResource(id = R.drawable.profile),
-                onTextSelected = {
+                onTextChanged = {
                     loginViewModel.onEvent(UIEvent.FirstNameChanged(it))
-                }
+                },
+                errorStatus = loginViewModel.registrationUIState.value.firstNameError
             )
 
             MyTextFieldComponent(
                 labelValue = stringResource(id = R.string.last_name),
                 painterResource = painterResource(id = R.drawable.profile),
-                onTextSelected = {
+                onTextChanged = {
                     loginViewModel.onEvent(UIEvent.LastNameChanged(it))
-                }
+                },
+                errorStatus = loginViewModel.registrationUIState.value.lastNameError
             )
 
             MyTextFieldComponent(
                 labelValue = stringResource(id = R.string.email),
                 painterResource = painterResource(id = R.drawable.message),
-                onTextSelected = {
+                onTextChanged = {
                     loginViewModel.onEvent(UIEvent.EmailChanged(it))
-                }
+                },
+                errorStatus = loginViewModel.registrationUIState.value.emailError
             )
 
             PasswordTextFieldComponent(
@@ -64,7 +65,8 @@ fun SignUpScreen(loginViewModel: LoginViewModel = viewModel()) {
                 painterResource = painterResource(id = R.drawable.ic_lock),
                 onTextSelected = {
                     loginViewModel.onEvent(UIEvent.PasswordChanged(it))
-                }
+                },
+                errorStatus = loginViewModel.registrationUIState.value.passwordError
             )
 
             CheckboxComponent(value = stringResource(id = R.string.terms_and_conditions),
