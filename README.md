@@ -5,12 +5,17 @@ This is a complete functional template for login and registration flow for any #
 
 In this video, we will explore how to implement a login screen using Jetpack Compose, with a particular focus on optimizing keyboard options and actions.!
 
-[![Logo]([https://github.com/droid-lover/LoginFeatureTemplateUsingJetpackCompose/blob/master/thumbnail.png?raw=true)
-](https://github.com/droid-lover/LoginFeatureTemplateUsingJetpackCompose/blob/master/images/thumbnail.png)
 
 
-Checkout now at our YouTube channel "Native Mobile Bits"
-
+<a href ="https://youtu.be/PeUERQJnHdI">Building a Complete Login Registration Flow in Jetpack Compose | Step-by-Step Tutorial</a>
+</br>
+</br>
+<a href ="https://youtu.be/n9IrkANVGxU">Login Screen Implementation using Jetpack Compose | Keyboard Options & Actions. </a>
+</br>
+</br>
+<a href ="https://youtu.be/peSfaIhKgfw">Architecting your Compose UI | Let's implement & learn | Jetpack Compose Series</a>
+</br>
+</br>
 
  If you love this repo, Drop a Star, Lets connect over here :) 
  
