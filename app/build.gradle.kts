@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -64,7 +65,9 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
 
+    implementation(platform("com.google.firebase:firebase-bom:32.0.0"))
 
+    implementation("com.google.firebase:firebase-auth-ktx")
 }
 
 kapt {
