@@ -174,7 +174,7 @@ fun PasswordTextFieldComponent(labelValue: String, painterResource: Painter,
 }
 
 @Composable
-fun CheckboxComponent(value: String, onTextSelected: (String) -> Unit) {
+fun CheckboxComponent(value: String, onTextSelected: (String) -> Unit, onCheckedChange :(Boolean)-> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -188,7 +188,8 @@ fun CheckboxComponent(value: String, onTextSelected: (String) -> Unit) {
 
         Checkbox(checked = checkedState.value,
             onCheckedChange = {
-                checkedState.value != checkedState.value
+                checkedState.value = !checkedState.value
+                onCheckedChange.invoke(it)
             })
 
         ClickableTextComponent(value = value, onTextSelected)
@@ -230,7 +231,7 @@ fun ClickableTextComponent(value: String, onTextSelected: (String) -> Unit) {
 }
 
 @Composable
-fun ButtonComponent(value: String , onButtonClicked : () -> Unit) {
+fun ButtonComponent(value: String , onButtonClicked : () -> Unit , isEnabled : Boolean = false) {
     Button(
         modifier = Modifier
             .fillMaxWidth()
@@ -240,7 +241,8 @@ fun ButtonComponent(value: String , onButtonClicked : () -> Unit) {
         },
         contentPadding = PaddingValues(),
         colors = ButtonDefaults.buttonColors(Color.Transparent),
-        shape = RoundedCornerShape(50.dp)
+        shape = RoundedCornerShape(50.dp),
+        enabled = isEnabled
     ) {
         Box(
             modifier = Modifier

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PostOfficeApp</string>
+    <string name="app_name">LoginFlowApp</string>
     <string name="hello">Hey there, </string>
     <string name="create_account">Create an Account </string>
     <string name="welcome">Welcome Back</string>
@@ -17,5 +17,7 @@
     <string name="go_to_login">Already have an account? Login</string>
 
     <string name="forgot_password">Forgot your password</string>
+    <string name="home">Home</string>
+    <string name="logout">Logout</string>
 
 </resources>
