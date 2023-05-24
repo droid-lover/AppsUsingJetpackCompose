@@ -16,6 +16,18 @@ In this video, we will explore how to implement a login screen using Jetpack Com
 <a href ="https://youtu.be/peSfaIhKgfw">Architecting your Compose UI | Let's implement & learn | Jetpack Compose Series</a>
 </br>
 </br>
+<a href ="https://youtu.be/008f7IUVYDQ">State Validation | How to manage Recomposition | Validator in Jetpack Compose</a>
+</br>
+</br>
+<a href ="https://youtu.be/KOI7fS7k8Y0">Mastering Firebase Integration: Jetpack Compose App with Login and SignUp Features</a> We are here, follow along
+</br>
+</br>
+
+
+
+
+
+
 
  If you love this repo, Drop a Star, Lets connect over here :) 
  
