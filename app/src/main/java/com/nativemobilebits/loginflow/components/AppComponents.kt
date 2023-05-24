@@ -2,6 +2,7 @@ package com.nativemobilebits.loginflow.components
 
 import android.util.Log
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
@@ -9,6 +10,8 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Logout
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.Composable
@@ -35,6 +38,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nativemobilebits.loginflow.R
@@ -73,9 +77,10 @@ fun HeadingTextComponent(value: String) {
 }
 
 @Composable
-fun MyTextFieldComponent(labelValue: String, painterResource: Painter,
-                         onTextChanged: (String) -> Unit,
-                         errorStatus:Boolean = false
+fun MyTextFieldComponent(
+    labelValue: String, painterResource: Painter,
+    onTextChanged: (String) -> Unit,
+    errorStatus: Boolean = false
 ) {
 
     val textValue = remember {
@@ -111,9 +116,11 @@ fun MyTextFieldComponent(labelValue: String, painterResource: Painter,
 
 
 @Composable
-fun PasswordTextFieldComponent(labelValue: String, painterResource: Painter,
-                               onTextSelected: (String) -> Unit,
-                               errorStatus:Boolean = false) {
+fun PasswordTextFieldComponent(
+    labelValue: String, painterResource: Painter,
+    onTextSelected: (String) -> Unit,
+    errorStatus: Boolean = false
+) {
 
     val localFocusManager = LocalFocusManager.current
     val password = remember {
@@ -135,7 +142,10 @@ fun PasswordTextFieldComponent(labelValue: String, painterResource: Painter,
             cursorColor = Primary,
             backgroundColor = BgColor
         ),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password, imeAction = ImeAction.Done),
+        keyboardOptions = KeyboardOptions(
+            keyboardType = KeyboardType.Password,
+            imeAction = ImeAction.Done
+        ),
         singleLine = true,
         keyboardActions = KeyboardActions {
             localFocusManager.clearFocus()
@@ -174,7 +184,11 @@ fun PasswordTextFieldComponent(labelValue: String, painterResource: Painter,
 }
 
 @Composable
-fun CheckboxComponent(value: String, onTextSelected: (String) -> Unit, onCheckedChange :(Boolean)-> Unit) {
+fun CheckboxComponent(
+    value: String,
+    onTextSelected: (String) -> Unit,
+    onCheckedChange: (Boolean) -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -231,7 +245,7 @@ fun ClickableTextComponent(value: String, onTextSelected: (String) -> Unit) {
 }
 
 @Composable
-fun ButtonComponent(value: String , onButtonClicked : () -> Unit , isEnabled : Boolean = false) {
+fun ButtonComponent(value: String, onButtonClicked: () -> Unit, isEnabled: Boolean = false) {
     Button(
         modifier = Modifier
             .fillMaxWidth()
@@ -355,3 +369,43 @@ fun UnderLinedTextComponent(value: String) {
     )
 
 }
+
+@Composable
+fun AppToolbar(toolbarTitle: String , logoutButtonClicked : () -> Unit) {
+
+    TopAppBar(
+        title = {
+            Text(
+                text = toolbarTitle, color = WhiteColor
+            )
+        },
+        navigationIcon = {
+            Icon(
+                imageVector = Icons.Filled.Menu,
+                contentDescription = stringResource(R.string.menu),
+                tint = WhiteColor
+            )
+        },
+        actions = {
+            IconButton(onClick = {
+                logoutButtonClicked.invoke()
+            }) {
+                Icon(
+                    imageVector = Icons.Filled.Logout ,
+                    contentDescription = stringResource(id = R.string.logout),
+                )
+            }
+        }
+    )
+}
+
+
+
+
+
+
+
+
+
+
+

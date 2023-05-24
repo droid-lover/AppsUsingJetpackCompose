@@ -19,5 +19,6 @@
     <string name="forgot_password">Forgot your password</string>
     <string name="home">Home</string>
     <string name="logout">Logout</string>
+    <string name="menu">Menu</string>
 
 </resources>
