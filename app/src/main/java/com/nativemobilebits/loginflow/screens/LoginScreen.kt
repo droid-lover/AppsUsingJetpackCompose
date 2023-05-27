@@ -13,12 +13,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.nativemobilebits.loginflow.LoginViewModel
+import com.nativemobilebits.loginflow.data.login.LoginViewModel
 import com.nativemobilebits.loginflow.R
 import com.nativemobilebits.loginflow.components.*
-import com.nativemobilebits.loginflow.data.LoginUIEvent
-import com.nativemobilebits.loginflow.data.SignupViewModel
-import com.nativemobilebits.loginflow.data.SignupUIEvent
+import com.nativemobilebits.loginflow.data.login.LoginUIEvent
 import com.nativemobilebits.loginflow.navigation.PostOfficeAppRouter
 import com.nativemobilebits.loginflow.navigation.Screen
 import com.nativemobilebits.loginflow.navigation.SystemBackButtonHandler

@@ -15,8 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.nativemobilebits.loginflow.R
 import com.nativemobilebits.loginflow.components.*
-import com.nativemobilebits.loginflow.data.SignupViewModel
-import com.nativemobilebits.loginflow.data.SignupUIEvent
+import com.nativemobilebits.loginflow.data.signup.SignupViewModel
+import com.nativemobilebits.loginflow.data.signup.SignupUIEvent
 import com.nativemobilebits.loginflow.navigation.PostOfficeAppRouter
 import com.nativemobilebits.loginflow.navigation.Screen
 

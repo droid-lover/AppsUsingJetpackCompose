@@ -20,5 +20,6 @@
     <string name="home">Home</string>
     <string name="logout">Logout</string>
     <string name="menu">Menu</string>
+    <string name="navigation_header">App Drawer</string>
 
 </resources>

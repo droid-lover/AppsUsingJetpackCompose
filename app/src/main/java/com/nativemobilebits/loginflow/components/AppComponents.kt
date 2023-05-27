@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardActions
@@ -20,8 +22,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.colorResource
@@ -38,10 +42,11 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nativemobilebits.loginflow.R
+import com.nativemobilebits.loginflow.data.NavigationItem
 import com.nativemobilebits.loginflow.ui.theme.*
 
 @Composable
@@ -371,27 +376,36 @@ fun UnderLinedTextComponent(value: String) {
 }
 
 @Composable
-fun AppToolbar(toolbarTitle: String , logoutButtonClicked : () -> Unit) {
+fun AppToolbar(
+    toolbarTitle: String, logoutButtonClicked: () -> Unit,
+    navigationIconClicked: () -> Unit
+) {
 
     TopAppBar(
+        backgroundColor = Primary,
         title = {
             Text(
                 text = toolbarTitle, color = WhiteColor
             )
         },
         navigationIcon = {
-            Icon(
-                imageVector = Icons.Filled.Menu,
-                contentDescription = stringResource(R.string.menu),
-                tint = WhiteColor
-            )
+            IconButton(onClick = {
+                navigationIconClicked.invoke()
+            }) {
+                Icon(
+                    imageVector = Icons.Filled.Menu,
+                    contentDescription = stringResource(R.string.menu),
+                    tint = WhiteColor
+                )
+            }
+
         },
         actions = {
             IconButton(onClick = {
                 logoutButtonClicked.invoke()
             }) {
                 Icon(
-                    imageVector = Icons.Filled.Logout ,
+                    imageVector = Icons.Filled.Logout,
                     contentDescription = stringResource(id = R.string.logout),
                 )
             }
@@ -399,11 +413,82 @@ fun AppToolbar(toolbarTitle: String , logoutButtonClicked : () -> Unit) {
     )
 }
 
+@Composable
+fun NavigationDrawerHeader() {
+    Box(
+        modifier = Modifier
+            .background(
+                Brush.horizontalGradient(
+                    listOf(Primary, Secondary)
+                )
+            )
+            .fillMaxWidth()
+            .height(180.dp)
+            .padding(32.dp)
+    ) {
+
+        NavigationDrawerText(
+            title = stringResource(R.string.navigation_header), 34.sp , AccentColor
+        )
+
+    }
+}
+
+@Composable
+fun NavigationDrawerBody(navigationDrawerItems: List<NavigationItem>,
+                         onNavigationItemClicked:(NavigationItem) -> Unit) {
+    LazyColumn(modifier = Modifier.fillMaxWidth()) {
+
+        items(navigationDrawerItems) {
+            NavigationItemRow(item = it,onNavigationItemClicked)
+        }
+
+    }
+}
+
+@Composable
+fun NavigationItemRow(item: NavigationItem,
+                      onNavigationItemClicked:(NavigationItem) -> Unit) {
 
 
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable {
+                onNavigationItemClicked.invoke(item)
+            }.padding(all = 16.dp)
+    ) {
+
+        Icon(
+            imageVector = item.icon,
+            contentDescription = item.description,
+        )
+
+        Spacer(modifier = Modifier.width(18.dp))
+
+        NavigationDrawerText(title = item.title, 18.sp, Primary)
 
 
+    }
+}
 
+@Composable
+fun NavigationDrawerText(title: String, textUnit: TextUnit,color: Color) {
+
+    val shadowOffset = Offset(4f, 6f)
+
+    Text(
+        text = title, style = TextStyle(
+            color = Color.Black,
+            fontSize = textUnit,
+            fontStyle = FontStyle.Normal,
+            shadow = Shadow(
+                color = Primary,
+                offset = shadowOffset, 2f
+            )
+        )
+    )
+}
 
 
 

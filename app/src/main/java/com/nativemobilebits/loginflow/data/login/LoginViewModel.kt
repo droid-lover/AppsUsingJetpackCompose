@@ -1,14 +1,9 @@
-package com.nativemobilebits.loginflow
+package com.nativemobilebits.loginflow.data.login
 
-import android.content.Context
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.nativemobilebits.loginflow.data.LoginUIEvent
-import com.nativemobilebits.loginflow.data.LoginUIState
-import com.nativemobilebits.loginflow.data.SignupUIEvent
-import com.nativemobilebits.loginflow.data.SignupViewModel
 import com.nativemobilebits.loginflow.data.rules.Validator
 import com.nativemobilebits.loginflow.navigation.PostOfficeAppRouter
 import com.nativemobilebits.loginflow.navigation.Screen

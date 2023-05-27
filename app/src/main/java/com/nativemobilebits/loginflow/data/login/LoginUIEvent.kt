@@ -1,4 +1,4 @@
-package com.nativemobilebits.loginflow.data
+package com.nativemobilebits.loginflow.data.login
 
 sealed class LoginUIEvent{
 
