@@ -22,10 +22,12 @@ In this video, we will explore how to implement a login screen using Jetpack Com
 <a href ="https://youtu.be/KOI7fS7k8Y0">Mastering Firebase Integration: Jetpack Compose App with Login and SignUp Features</a> 
 </br>
 </br>
-<a href ="https://youtu.be/ne2jap1ec24">Scaffold in Jetpack Compose : Building Cool Apps Made Easy!</a> We are here, follow along
+<a href ="https://youtu.be/ne2jap1ec24">Scaffold in Jetpack Compose : Building Cool Apps Made Easy!</a>
 </br>
 </br>
-
+<a href ="https://youtu.be/BMv5K35lhUY">Navigation Drawer in Jetpack Compose : Simplified Mastery with clear implementation</a>  We are here, follow along
+</br>
+</br>
 
 
 
