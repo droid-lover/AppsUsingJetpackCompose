@@ -414,7 +414,7 @@ fun AppToolbar(
 }
 
 @Composable
-fun NavigationDrawerHeader() {
+fun NavigationDrawerHeader(value: String?) {
     Box(
         modifier = Modifier
             .background(
@@ -428,7 +428,7 @@ fun NavigationDrawerHeader() {
     ) {
 
         NavigationDrawerText(
-            title = stringResource(R.string.navigation_header), 34.sp , AccentColor
+            title = value?:stringResource(R.string.navigation_header), 28.sp , AccentColor
         )
 
     }
