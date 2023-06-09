@@ -25,7 +25,10 @@ In this video, we will explore how to implement a login screen using Jetpack Com
 <a href ="https://youtu.be/ne2jap1ec24">Scaffold in Jetpack Compose : Building Cool Apps Made Easy!</a>
 </br>
 </br>
-<a href ="https://youtu.be/BMv5K35lhUY">Navigation Drawer in Jetpack Compose : Simplified Mastery with clear implementation</a>  We are here, follow along
+<a href ="https://youtu.be/BMv5K35lhUY">Navigation Drawer in Jetpack Compose : Simplified Mastery with clear implementation</a> 
+</br>
+</br>
+-> <a href ="https://youtu.be/P-uPdHlDdzM">Elegant Session Management in Jetpack Compose : Crafting an Elegant User Journey</a>  We are here, follow along
 </br>
 </br>
 
