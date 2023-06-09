@@ -29,6 +29,8 @@ fun HomeScreen(homeViewModel: HomeViewModel = viewModel()) {
     val scaffoldState = rememberScaffoldState()
     val coroutineScope = rememberCoroutineScope()
 
+    homeViewModel.getUserData()
+
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = {
@@ -45,7 +47,7 @@ fun HomeScreen(homeViewModel: HomeViewModel = viewModel()) {
         },
         drawerGesturesEnabled = scaffoldState.drawerState.isOpen,
         drawerContent = {
-            NavigationDrawerHeader()
+            NavigationDrawerHeader(homeViewModel.emailId.value)
             NavigationDrawerBody(navigationDrawerItems = homeViewModel.navigationItemsList,
                 onNavigationItemClicked = {
                     Log.d("ComingHere","inside_NavigationItemClicked")
