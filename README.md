@@ -1,7 +1,7 @@
-# LoginFeatureTemplateUsingJetpackCompose
+# SuperApp built with JetpackCompose
 
 
-This is a complete functional template for login and registration flow for any #Android #App using #JetpackCompose.
+This is a in progress project built using JETPACK COMPOSE, all the implementation videos can be found at <a href ="https://www.youtube.com/@NativeMobileBits">Native Mobile Bits</a>.
 
 In this video, we will explore how to implement a login screen using Jetpack Compose, with a particular focus on optimizing keyboard options and actions.!
 
